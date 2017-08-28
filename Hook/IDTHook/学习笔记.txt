@@ -1,0 +1,9 @@
+在保护模式(包括long-mode)下，对中断/异常处理的调用通过IDT(中断描述符表)进行。
+在legacy保护模式下，IDT里的每个entry是8个字节宽的gate描述符，在IA-32e(long-mode)模式下每个
+entry是16字节宽的gate描述符。当执行中断指令 int 0x40时
+1.legacy保护模式下，从IDTR.base+0x40*8处读取gate描述符
+2.IA-32e模式下，从IDTR.base+0x40*16处读取gate描述符。
+
+
+
+

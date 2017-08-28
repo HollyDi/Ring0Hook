@@ -1,0 +1,20 @@
+#pragma once
+#include <windows.h>
+#define CTL_IRP_HOOK \
+	CTL_CODE(FILE_DEVICE_UNKNOWN,0x830,METHOD_BUFFERED,FILE_ANY_ACCESS)
+#define CTL_IDT_HOOK	CTL_CODE(FILE_DEVICE_UNKNOWN, 0x803, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define CTL_EAT_HOOK_RING3 \
+	CTL_CODE(FILE_DEVICE_UNKNOWN,0x810,METHOD_BUFFERED,FILE_ANY_ACCESS)
+
+typedef struct _DATA_
+{
+	BOOLEAN IsHook;
+	ULONG   ProcessID;
+	PVOID   VirtualAddress;
+}DATA, *PDATA;
+BOOL  IrpHook();
+BOOL  IDTHook();
+HANDLE
+OpenDevice(LPCTSTR LinkPath);
+BOOL
+SendIoControlCode(HANDLE DeviceHandle, DATA  Data, ULONG IoControlCode);

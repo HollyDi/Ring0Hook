@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="工程">
+      <UniqueIdentifier>{16cd5f1f-db39-4c79-b77d-9ed3b01c99be}</UniqueIdentifier>
+      <Extensions>cpp;c;def</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\IrpHook.c">
+      <Filter>工程</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\IrpHook.h">
+      <Filter>工程</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
